@@ -45,6 +45,30 @@
                         <input type="text" name="link" value="{{$module->link}}" class="form-control" placeholder="ссылка">
                     </div>
                 </div>
+                <div class="col-12">
+                    <div class="fs-5">
+                        <label>Функция:</label>
+                        <input type="text" name="function" value="{{$module->function}}" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="fs-5">
+                        <label>type handler:</label>
+                        <input type="text" name="type_handler" value="{{$module->type_handler}}" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="fs-5">
+                        <label>Название контролера:</label>
+                        <input type="text" name="controller_name" value="{{$module->controller_name}}" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="fs-5">
+                        <label>Номер сортировки:</label>
+                        <input type="text" name="sort_field" value="{{$module->sort_field}}" class="form-control">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label>код организации:</label>
                     <input type="text" name="organization_id" value="{{$module->organization_id}}" class="form-control" placeholder="код организации">
@@ -53,7 +77,6 @@
                 <div class="col-12 mt-2">
                     <button type="submit" class="btn btn-primary">Изменить</button>
                 </div>
-            </div>
         </form>
     </div>
 @endsection

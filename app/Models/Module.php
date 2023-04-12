@@ -12,6 +12,10 @@ class Module extends Model
         'name',
         'icon',
         'link',
-        'organization_id',
+        'function',
+        'type_handler',
+        'controller_name',
+        'sort_field',
+        'organization_id'
     ];
 }

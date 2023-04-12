@@ -19,7 +19,12 @@
                 <th>Название</th>
                 <th>Иконка</th>
                 <th>Ссылка</th>
+                <th>Функция</th>
+                <th>type handler</th>
+                <th>Имя контролера</th>
+                <th>Номер сортировки</th>
                 <th>Номер организации</th>
+                <th></th>
             </tr>
             @foreach ($modules as $module)
                 <tr>
@@ -27,9 +32,13 @@
                     <td>{{$module->name}}</td>
                     <td>{{$module->icon}}</td>
                     <td>{{$module->link}}</td>
+                    <td>{{$module->function}}</td>
+                    <td>{{$module->type_handler}}</td>
+                    <td>{{$module->controller_name}}</td>
+                    <td>{{$module->sort_field}}</td>
                     <td>{{$module->organization_id}}</td>
                     <td>
-                        <form action="{{route('module.destroy',$module)}}" method="POST">
+                        <form class="row gy-1 gx-1" action="{{route('module.destroy',$module)}}" method="POST">
                             <a type="button" class="btn btn-info" href="{{route('module.show',$module)}}">Показать</a>
                             <a class="btn btn-primary" href="{{route('module.edit',$module)}}">Обновить</a>
                             @csrf

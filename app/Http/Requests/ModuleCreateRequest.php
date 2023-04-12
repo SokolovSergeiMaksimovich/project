@@ -25,7 +25,11 @@ class ModuleCreateRequest extends FormRequest
             'name' => 'required',
             'icon' => 'required',
             'link' => 'required',
-            'organization_id' => 'required',
+            'function' => 'required',
+            'type_handler' => 'required',
+            'controller_name' => 'required',
+            'sort_field' => 'required',
+            'organization_id' => 'required'
         ];
     }
 }

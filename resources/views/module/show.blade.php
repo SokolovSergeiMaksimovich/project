@@ -29,6 +29,30 @@
         </div>
         <div class="col-12">
             <div class="fs-5">
+                <label>Функция:</label>
+                <span class="text-primary border border-1 border-dark border-opacity-50 px-3">{{$module->function}}</span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="fs-5">
+                <label>type handler:</label>
+                <span class="text-primary border border-1 border-dark border-opacity-50 px-3">{{$module->type_handler}}</span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="fs-5">
+                <label>Название контролера:</label>
+                <span class="text-primary border border-1 border-dark border-opacity-50 px-3">{{$module->controller_name}}</span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="fs-5">
+                <label>Номер сортировки:</label>
+                <span class="text-primary border border-1 border-dark border-opacity-50 px-3">{{$module->sort_field}}</span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="fs-5">
                 <label>Код организации:</label>
                 <span class="text-primary border border-1 border-dark border-opacity-50 px-3">{{$module->organization_id}}</span>
             </div>

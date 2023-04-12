@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('icon')->nullable();
-            $table->string('link')->nullable();
-            $table->string('organization_id')->nullable();
+            $table->string('name');
+            $table->string('icon');
+            $table->string('link');
+            $table->string('function')->nullable();
+            $table->integer('type_handler')->nullable(0);
+            $table->string('controller_name')->nullable();
+            $table->integer('sort_field')->default(0);
+            $table->integer('organization_id');
             $table->timestamps();
         });
     }
