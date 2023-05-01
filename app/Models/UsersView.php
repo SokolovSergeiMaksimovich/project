@@ -16,7 +16,7 @@ class UsersView extends Model
         return DB::statement("
             create view view_user_struct as
             select user_structs.id, id_parent, position, user_structs.status, is_department, department_id, register_contacts,fio,password,password_hash
-            from user_structs INNER JOIN users
+            from user_structs LEFT JOIN users
             ON user_structs.id = users.user_struct_id;
         ");
     }
