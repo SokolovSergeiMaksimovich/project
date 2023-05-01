@@ -1,4 +1,4 @@
-@extends('module.layout')
+@extends('layouts.layout')
 <!doctype html>
 <html lang="ru">
 <head>
@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body class="container mt-5">
-    <a href="{{route('module.index')}}" class="btn btn-primary w-100">Модуль</a>
+    <div class="row gy-2">
+        <a href="{{route('module.index')}}" class="btn btn-primary w-100">Модуль</a>
+        <a href="{{route('user.index')}}" class="btn btn-primary w-100">Штатная стуктура</a>
+    </div>
 </body>
 </html>

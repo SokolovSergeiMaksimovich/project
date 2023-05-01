@@ -1,4 +1,4 @@
-@extends('module.layout')
+@extends('layouts.layout')
 @section('content')
     <div class="row gy-2">
         <div class="col-12">
@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="form-group">
                         <label for="">Наименование модуля</label>
-                        <input type="text" name="name" value="{{old('icon')}}" class="form-control" placeholder="Наименование модуля">
+                        <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Наименование модуля">
                     </div>
                 </div>
                 <div class="col-12">

@@ -1,4 +1,4 @@
-@extends('module.layout')
+@extends('layouts.layout')
 
 @section('content')
     <div class="row gy-2">
