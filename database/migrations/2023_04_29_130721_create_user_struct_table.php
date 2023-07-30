@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('user_structs', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_parent');
             $table->string('position');
             $table->integer('status');
-            $table->integer('id_buisnes_route')->nullable();
             $table->integer('is_department');
             $table->string('hid');
             $table->integer('department_id');
             $table->integer('register_contacts');
             $table->integer('department_hr')->nullable();
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
         });
     }
@@ -34,3 +33,4 @@ return new class extends Migration
         Schema::dropIfExists('user_structs');
     }
 };
+

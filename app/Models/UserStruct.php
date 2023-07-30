@@ -5,32 +5,35 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Kalnoy\Nestedset\NodeTrait;
 
 /**
  * @method static create(array $user_structs)
  * @method static whereNull(string $string)
+ * @method static find(mixed $parent_id)
  */
 class UserStruct extends Model
 {
     use HasFactory;
+    use NodeTrait;
 
+    protected $primaryKey = 'id'; // Проверьте имя первичного ключа
     protected $fillable = [
-        'id_parent',
         'position',
         'status',
-        'id_buisnes_route',
         'is_department',
         'hid',
         'department_id',
         'register_contacts',
         'department_hr',
+        'parent_id',
+        '_lft',
+        '_rgt'
     ];
 
-
-    public function children(): HasMany
+   public function users(): HasMany
     {
-        return $this->hasMany(UserStruct::class, 'id_parent', 'id');
+        return $this->hasMany(User::class);
     }
-
 
 }
