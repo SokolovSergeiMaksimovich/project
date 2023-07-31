@@ -73,7 +73,9 @@
                     {{ $user_struct->fio }} <br>
                     {{ $user_struct->position }}
                 </span>
-                @include('user.tree', ['users_struct' => $user_struct->children])
+                @if(count($user_struct->children))
+                    @include('user.tree', ['users_struct' => $user_struct->children])
+                @endif
             </li>
         @endforeach
     </ul>
