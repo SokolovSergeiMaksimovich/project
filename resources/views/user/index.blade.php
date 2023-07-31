@@ -68,9 +68,10 @@
 <div class="container-fluid mt-3">
     <ul class="tree">
         @foreach($users_struct as $user_struct)
-            <li class="collapsed">
+            <li >
                 <span class="">
                     {{ $user_struct->fio }} <br>
+                    {{ $user_struct->position }}
                 </span>
                 @include('user.tree', ['users_struct' => $user_struct->children])
             </li>
