@@ -71,4 +71,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+   public function users_struct(): BelongsTo
+    {
+       return $this->belongsTo(UserStruct::class);
+    }
+
 }

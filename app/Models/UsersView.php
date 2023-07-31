@@ -13,18 +13,17 @@ class UsersView extends Model
 
     public static function view()
     {
-        return DB::statement("
+      /*  return DB::statement("
             create view view_user_struct as
-            select user_structs.id, id_parent, position, user_structs.status, is_department, department_id, register_contacts,fio,password,password_hash
+            select user_structs.id, parent_id, position, user_structs.status, is_department, department_id, register_contacts,fio,password,password_hash
             from user_structs LEFT JOIN users
             ON user_structs.id = users.user_struct_id;
-        ");
+        ");*/
     }
 
-    protected $table = 'view_user_struct';
 
-    public function children(): HasMany
+    /*public function children(): HasMany
     {
-        return $this->hasMany(UsersView::class, 'id_parent', 'id');
-    }
+        return $this->hasMany(UsersView::class, 'parent_id', 'id');
+    }*/
 }
