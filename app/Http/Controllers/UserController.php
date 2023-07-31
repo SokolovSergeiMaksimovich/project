@@ -19,9 +19,6 @@ class UserController extends Controller
      */
     public function index()
     {
-
-
-        // Шаг 1: Получение корневого узла дерева
         $users_struct = UserStruct::leftJoin('users', 'user_structs.id', '=','users.user_struct_id')
             ->select('fio','position','user_structs.id', 'user_structs.parent_id','_lft','_rgt')
             ->where('user_structs.status','=','0')
