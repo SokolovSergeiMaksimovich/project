@@ -26,8 +26,6 @@ class UserController extends Controller
             ->get()
             ->toTree();
 
-
-
         return view('user.index', compact('users_struct'));
     }
 
