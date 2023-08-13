@@ -11,6 +11,7 @@ use Kalnoy\Nestedset\NodeTrait;
  * @method static create(array $user_structs)
  * @method static whereNull(string $string)
  * @method static find(mixed $parent_id)
+ * @method static leftJoin(string $string, string $string1, string $string2, string $string3)
  */
 class UserStruct extends Model
 {

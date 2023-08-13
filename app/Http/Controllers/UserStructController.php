@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserCheck;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Models\UserStruct;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UserStructController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      */
@@ -18,13 +18,12 @@ class UserController extends Controller
     {
 
         $users_struct = UserStruct::leftJoin('users', 'user_structs.id', '=','users.user_struct_id')
-            ->select('fio','position','user_structs.id', 'user_structs.parent_id','_lft','_rgt')
+            ->select('fio','position','user_structs.id', 'user_structs.is_department','user_structs.parent_id','_lft','_rgt')
             ->where('user_structs.status','=','0')
-            ->where('parent_id','<>',0)
             ->get()
             ->toTree();
 
-        return view('user.index', compact('users_struct'));
+        return view('test.index', compact('users_struct'));
     }
 
     /**
@@ -74,5 +73,4 @@ class UserController extends Controller
     {
         //
     }
-
 }
