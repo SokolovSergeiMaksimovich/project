@@ -32,6 +32,7 @@ class UserStructController extends Controller
     public function create()
     {
         //
+        return view('test.create');
     }
 
     /**
@@ -48,6 +49,7 @@ class UserStructController extends Controller
     public function show(User $user)
     {
         //
+        return view('test.create', compact('user'));
     }
 
     /**

@@ -1,14 +1,16 @@
 @if($users_struct)
-    <ul>
+    <ul class="mt-3">
         @foreach($users_struct as $user_struct)
 
 
                 @if($user_struct->is_department == 1)
                 <li>
-                    <span>
-                       {{ $user_struct->is_department}}
-                        {{ $user_struct->position }}
-                    </span>
+                    <div class="p-1 border-dark border border-1 rounded-1 d-inline">
+                        <span>
+                            {{ $user_struct->position }}
+                        </span>
+                    </div>
+                    <a type="button" class="btn btn-info" href="{{route('test.show',$user_struct)}}">+</a>
                 </li>
                 @endif
                 @if(count($user_struct->children))
