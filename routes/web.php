@@ -29,4 +29,4 @@ Route::resource('test', UserStructController::class);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login_check', [AuthController::class, 'login'])->name('login_check');
 
-//Route::get('/', [HeaderController::class, 'index']);
+Route::get('/', [HeaderController::class, 'index']);
