@@ -96,9 +96,7 @@
             <li class="mb-1 header">
                 <span class="small text-dark text-opacity-50">Модули</span>
 
-                @foreach ($modules as $module)
-                    {{ $module->name }}
-                @endforeach
+
             </li>
         </ul>
     </div>

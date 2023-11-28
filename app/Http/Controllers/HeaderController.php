@@ -17,6 +17,6 @@ class HeaderController extends Controller
     {
         $modules = Module::all();
 
-        return view('layouts/header', compact('modules'));
+       // return view('layouts/sidebar', compact('modules'));
     }
 }
