@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\UserStructController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +17,10 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('/index');
 })->name('home');
+
 Route::resource('module', ModuleController::class);
 
 Route::resource('user', UserController::class);
@@ -27,3 +28,5 @@ Route::resource('test', UserStructController::class);
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login_check', [AuthController::class, 'login'])->name('login_check');
+
+Route::get('/', [HeaderController::class, 'index']);
