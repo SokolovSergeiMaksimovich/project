@@ -17,8 +17,8 @@
                 </button>
             </div>
 
-            <a class="navbar-brand" href="">
-                <span class="text-start"><b> СЭД </b> КДК</span>&nbsp;&nbsp;&nbsp;
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <span class="text-start"><b> СЭД </b> КДК</span>
             </a>
 
             <ul class="navbar-nav ms-auto">
@@ -104,14 +104,17 @@
             <li class="mb-1 header">
                 <span class="small text-dark text-opacity-50">Модули</span>
                 @foreach ($modules as $module)
-                    {{$module->name}}
+                    @if(Route::has($module->link . '.' . $module->function))
+                        <li class="my-1 py-0"><a href="{{ route($module->link . '.' . $module->function) }}" class="text-decoration-none text-reset d-block w-100 py-1 '+ click_class +'"><i class="fa {{$module->icon}}"></i><span class="ps-2 pe-1">{{$module->name}}</span></a></li>
+                    @endif
+
                 @endforeach
 
             </li>
         </ul>
     </div>
 </header>
-<div class="container">
+<div class="content-wrapper">
     @yield('content')
 </div>
 @yield('footer')
