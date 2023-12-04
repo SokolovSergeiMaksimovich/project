@@ -20,6 +20,7 @@ class UserController extends Controller
             ->select('fio','position','user_structs.id', 'user_structs.parent_id','_lft','_rgt')
             ->where('user_structs.status','=','0')
             ->where('parent_id','<>',0)
+            ->orWhereNull('parent_id')
             ->get()
             ->toTree();
 
